@@ -1,12 +1,14 @@
+import { useState } from 'react';
 import './App.css';
 import Alert from './components/Alert';
 import Login from './components/Login';
 
 function App() {
+  const[alerta,setAlerta]=useState({msg:'', color:''})
   return (
     <div className="container">
-      <Alert/>
-      <Login/>
+      <Login setAlerta={setAlerta}/>
+      <Alert alerta={alerta}/>
     </div>
   );
 }
